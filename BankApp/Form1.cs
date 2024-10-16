@@ -29,5 +29,20 @@ namespace BankApp
             AccountAmountTextBox.Text = account.amount.ToString();
 
         }
+
+        private void OnAppLoad(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            if(loginForm.ShowDialog(this) == DialogResult.OK)
+            {
+                //jeœli zalogowano poprawnie to poka¿ formularz
+                this.Show();
+            }
+            else
+            {
+                //jeœli nie to zamknij aplikacjê
+                Application.Exit();
+            }
+        }
     }
 }
