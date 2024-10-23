@@ -4,10 +4,12 @@ namespace BankApp
 {
     public partial class Form1 : Form
     {
+        public string token;
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void GetAccountData(object sender, EventArgs e)
         {
@@ -32,11 +34,12 @@ namespace BankApp
 
         private void OnAppLoad(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
+            Login loginForm = new Login(this);
             if(loginForm.ShowDialog(this) == DialogResult.OK)
             {
                 //jeœli zalogowano poprawnie to poka¿ formularz
                 this.Show();
+                tokenTextBox.Text = token;
             }
             else
             {

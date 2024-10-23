@@ -34,8 +34,8 @@
             label3 = new Label();
             LoginButton = new Button();
             ExitButton = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            passwordTextBox = new TextBox();
+            loginTextBox = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,8 +49,8 @@
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
             tableLayoutPanel1.Controls.Add(LoginButton, 0, 3);
             tableLayoutPanel1.Controls.Add(ExitButton, 1, 3);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(passwordTextBox, 1, 2);
+            tableLayoutPanel1.Controls.Add(loginTextBox, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -107,7 +107,7 @@
             LoginButton.Location = new Point(3, 339);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(394, 108);
-            LoginButton.TabIndex = 5;
+            LoginButton.TabIndex = 3;
             LoginButton.Text = "Zaloguj";
             LoginButton.UseVisualStyleBackColor = true;
             LoginButton.Click += LoginButtonPressed;
@@ -119,28 +119,28 @@
             ExitButton.Location = new Point(403, 339);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(394, 108);
-            ExitButton.TabIndex = 6;
+            ExitButton.TabIndex = 4;
             ExitButton.Text = "Wyjdź";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButtonPressed;
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            textBox2.Location = new Point(403, 227);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(394, 33);
-            textBox2.TabIndex = 7;
+            passwordTextBox.Dock = DockStyle.Fill;
+            passwordTextBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            passwordTextBox.Location = new Point(403, 227);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(394, 33);
+            passwordTextBox.TabIndex = 2;
             // 
-            // textBox1
+            // loginTextBox
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            textBox1.Location = new Point(403, 115);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(394, 33);
-            textBox1.TabIndex = 8;
+            loginTextBox.Dock = DockStyle.Fill;
+            loginTextBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            loginTextBox.Location = new Point(403, 115);
+            loginTextBox.Name = "loginTextBox";
+            loginTextBox.Size = new Size(394, 33);
+            loginTextBox.TabIndex = 1;
             // 
             // Login
             // 
@@ -163,7 +163,7 @@
         private Label label3;
         private Button LoginButton;
         private Button ExitButton;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passwordTextBox;
+        private TextBox loginTextBox;
     }
 }

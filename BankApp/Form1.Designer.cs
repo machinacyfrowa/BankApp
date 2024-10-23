@@ -38,6 +38,7 @@
             label3 = new Label();
             AccountNameTextBox = new TextBox();
             label2 = new Label();
+            tokenTextBox = new TextBox();
             AccountDetailsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -133,11 +134,21 @@
             label2.TabIndex = 0;
             label2.Text = "Nazwa rachunku:";
             // 
+            // tokenTextBox
+            // 
+            tokenTextBox.Dock = DockStyle.Bottom;
+            tokenTextBox.Location = new Point(0, 226);
+            tokenTextBox.Name = "tokenTextBox";
+            tokenTextBox.ReadOnly = true;
+            tokenTextBox.Size = new Size(463, 23);
+            tokenTextBox.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(463, 168);
+            ClientSize = new Size(463, 249);
+            Controls.Add(tokenTextBox);
             Controls.Add(AccountDetailsGroupBox);
             Controls.Add(GetAccountDataButton);
             Controls.Add(label1);
@@ -163,5 +174,6 @@
         private Label label3;
         private TextBox AccountNameTextBox;
         private Label label2;
+        private TextBox tokenTextBox;
     }
 }
