@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AccountNoTextBox = new TextBox();
-            label1 = new Label();
-            GetAccountDataButton = new Button();
             AccountDetailsGroupBox = new GroupBox();
             AccountAmountTextBox = new TextBox();
             label4 = new Label();
@@ -41,32 +38,6 @@
             tokenTextBox = new TextBox();
             AccountDetailsGroupBox.SuspendLayout();
             SuspendLayout();
-            // 
-            // AccountNoTextBox
-            // 
-            AccountNoTextBox.Location = new Point(118, 6);
-            AccountNoTextBox.Name = "AccountNoTextBox";
-            AccountNoTextBox.Size = new Size(100, 23);
-            AccountNoTextBox.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Numer rachunku:";
-            // 
-            // GetAccountDataButton
-            // 
-            GetAccountDataButton.Location = new Point(224, 5);
-            GetAccountDataButton.Name = "GetAccountDataButton";
-            GetAccountDataButton.Size = new Size(110, 23);
-            GetAccountDataButton.TabIndex = 2;
-            GetAccountDataButton.Text = "Pobierz dane";
-            GetAccountDataButton.UseVisualStyleBackColor = true;
-            GetAccountDataButton.Click += GetAccountData;
             // 
             // AccountDetailsGroupBox
             // 
@@ -150,12 +121,10 @@
             ClientSize = new Size(463, 249);
             Controls.Add(tokenTextBox);
             Controls.Add(AccountDetailsGroupBox);
-            Controls.Add(GetAccountDataButton);
-            Controls.Add(label1);
-            Controls.Add(AccountNoTextBox);
             Name = "Form1";
             Text = "Form1";
             Load += OnAppLoad;
+            Shown += GetAccountData;
             AccountDetailsGroupBox.ResumeLayout(false);
             AccountDetailsGroupBox.PerformLayout();
             ResumeLayout(false);
@@ -163,10 +132,6 @@
         }
 
         #endregion
-
-        private TextBox AccountNoTextBox;
-        private Label label1;
-        private Button GetAccountDataButton;
         private GroupBox AccountDetailsGroupBox;
         private TextBox AccountAmountTextBox;
         private Label label4;

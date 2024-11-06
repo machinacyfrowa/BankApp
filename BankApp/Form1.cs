@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net.Http.Json;
 
 namespace BankApp
 {
@@ -16,12 +17,12 @@ namespace BankApp
             //to jest blibioteka do wysy³ania zapytañ http
             //i przetwarzania odpowiedzi otrzymanych z API
             HttpClient client = new HttpClient();
-            //adres API
-            string url = "http://localhost/bankAPI/account/";
-            //dopisz numer konta z textboxa do adresu API
-            url += AccountNoTextBox.Text;
-            //wysy³amy zapytanie GET do API
-            HttpResponseMessage response = client.GetAsync(url).Result;
+            //adres API - endpoint zwraca szczegó³y rachunku na podstawie tokenu
+            string url = "http://localhost/bankAPI/account/details/";
+            //tworzymy obiekt zawieraj¹cy token
+            var data = new { token = token };
+            //wysy³amy zapytanie POST do API zawieraj¹ce token
+            HttpResponseMessage response = client.PostAsJsonAsync(url, data).Result;
             //wyci¹gnij z odpowiedzi dane w formacie JSON
             string json = response.Content.ReadAsStringAsync().Result;
             Account account = JsonConvert.DeserializeObject<Account>(json);
