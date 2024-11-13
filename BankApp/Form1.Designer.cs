@@ -36,6 +36,7 @@
             AccountNameTextBox = new TextBox();
             label2 = new Label();
             tokenTextBox = new TextBox();
+            newTransferButton = new Button();
             AccountDetailsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,11 +115,22 @@
             tokenTextBox.Size = new Size(463, 23);
             tokenTextBox.TabIndex = 4;
             // 
+            // newTransferButton
+            // 
+            newTransferButton.Location = new Point(222, 182);
+            newTransferButton.Name = "newTransferButton";
+            newTransferButton.Size = new Size(203, 23);
+            newTransferButton.TabIndex = 5;
+            newTransferButton.Text = "Nowy przelew";
+            newTransferButton.UseVisualStyleBackColor = true;
+            newTransferButton.Click += newTransferButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 249);
+            Controls.Add(newTransferButton);
             Controls.Add(tokenTextBox);
             Controls.Add(AccountDetailsGroupBox);
             Name = "Form1";
@@ -140,5 +152,6 @@
         private TextBox AccountNameTextBox;
         private Label label2;
         private TextBox tokenTextBox;
+        private Button newTransferButton;
     }
 }

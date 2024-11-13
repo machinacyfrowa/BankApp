@@ -36,7 +36,7 @@ namespace BankApp
         private void OnAppLoad(object sender, EventArgs e)
         {
             Login loginForm = new Login(this);
-            if(loginForm.ShowDialog(this) == DialogResult.OK)
+            if (loginForm.ShowDialog(this) == DialogResult.OK)
             {
                 //jeœli zalogowano poprawnie to poka¿ formularz
                 this.Show();
@@ -47,6 +47,18 @@ namespace BankApp
                 //jeœli nie to zamknij aplikacjê
                 Application.Exit();
             }
+        }
+
+        private void newTransferButton_Click(object sender, EventArgs e)
+        {
+            //otwórz formularz nowego przelewu
+            NewTransfer newTransfer = new NewTransfer();
+            
+            newTransfer.token = token;
+            newTransfer.source = AccountNumberTextBox.Text;
+
+            newTransfer.ShowDialog();
+            //TODO: poka¿ zaktualizowany stan konta po wykonaniu przelewu
         }
     }
 }
