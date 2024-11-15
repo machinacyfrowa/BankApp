@@ -5,13 +5,20 @@ namespace BankApp
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// The token received from the API after successful login
+        /// </summary>
         public string token;
         public Form1()
         {
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Method to get account data from API and fill the form with it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GetAccountData(object sender, EventArgs e)
         {
             //to jest blibioteka do wysy³ania zapytañ http
@@ -32,7 +39,12 @@ namespace BankApp
             AccountAmountTextBox.Text = account.amount.ToString();
 
         }
-
+        /// <summary>
+        /// This method is invoked when the application is loaded
+        /// and its used to show login form before the main form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnAppLoad(object sender, EventArgs e)
         {
             Login loginForm = new Login(this);
@@ -48,7 +60,11 @@ namespace BankApp
                 Application.Exit();
             }
         }
-
+        /// <summary>
+        /// Method creates and shows the form for new transfer between accounts
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newTransferButton_Click(object sender, EventArgs e)
         {
             //otwórz formularz nowego przelewu

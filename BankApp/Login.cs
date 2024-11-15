@@ -21,7 +21,11 @@ namespace BankApp
             MainForm = p;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Method to handle login button click - sends login and password to API
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginButtonPressed(object sender, EventArgs e)
         {
             string login = loginTextBox.Text;
