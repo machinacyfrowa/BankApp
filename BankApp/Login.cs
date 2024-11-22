@@ -36,8 +36,8 @@ namespace BankApp
             //adres API
             string url = "http://localhost/bankAPI/login/";
             //stworz dane do wysłania
-            //stworz "w powietrzu" obiekt zawierający login i hasło
-            var data = new { login = login, password = password };
+            LoginRequest data = new LoginRequest(login, password);
+            
             //zakoduj jako json i wyślij postem
             //odbierz odpowiedź z API jako HttpResponseMessage
             HttpResponseMessage response = 
