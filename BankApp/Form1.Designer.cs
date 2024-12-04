@@ -37,6 +37,7 @@
             label2 = new Label();
             tokenTextBox = new TextBox();
             newTransferButton = new Button();
+            TransferHistoryButton = new Button();
             AccountDetailsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -125,11 +126,22 @@
             newTransferButton.UseVisualStyleBackColor = true;
             newTransferButton.Click += newTransferButton_Click;
             // 
+            // TransferHistoryButton
+            // 
+            TransferHistoryButton.Location = new Point(12, 182);
+            TransferHistoryButton.Name = "TransferHistoryButton";
+            TransferHistoryButton.Size = new Size(191, 23);
+            TransferHistoryButton.TabIndex = 6;
+            TransferHistoryButton.Text = "Historia przelewów";
+            TransferHistoryButton.UseVisualStyleBackColor = true;
+            TransferHistoryButton.Click += TransferHistoryButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 249);
+            Controls.Add(TransferHistoryButton);
             Controls.Add(newTransferButton);
             Controls.Add(tokenTextBox);
             Controls.Add(AccountDetailsGroupBox);
@@ -153,5 +165,6 @@
         private Label label2;
         private TextBox tokenTextBox;
         private Button newTransferButton;
+        private Button TransferHistoryButton;
     }
 }

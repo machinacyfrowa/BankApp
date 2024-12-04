@@ -32,7 +32,7 @@ namespace BankApp
             HttpResponseMessage response = client.PostAsJsonAsync(url, data).Result;
             //wyci¹gnij z odpowiedzi dane w formacie JSON
             string json = response.Content.ReadAsStringAsync().Result;
-            AccountDetailsResponse accountDetailsResponse = 
+            AccountDetailsResponse accountDetailsResponse =
                 JsonConvert.DeserializeObject<AccountDetailsResponse>(json);
             Account account = accountDetailsResponse.account;
             //wypisz dane na formularzu
@@ -71,12 +71,19 @@ namespace BankApp
         {
             //otwórz formularz nowego przelewu
             NewTransfer newTransfer = new NewTransfer();
-            
+
             newTransfer.token = token;
             newTransfer.source = AccountNumberTextBox.Text;
 
             newTransfer.ShowDialog();
             //TODO: poka¿ zaktualizowany stan konta po wykonaniu przelewu
+        }
+
+        private void TransferHistoryButton_Click(object sender, EventArgs e)
+        {
+            TransferHistory transferHistory = new TransferHistory();
+
+            transferHistory.ShowDialog();
         }
     }
 }

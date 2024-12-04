@@ -29,36 +29,37 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
-            bindingSource1 = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            TransferHistoryDataGrid = new DataGridView();
+            TransferHistorySource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)TransferHistoryDataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TransferHistorySource).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // TransferHistoryDataGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(238, 249);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 0;
+            TransferHistoryDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TransferHistoryDataGrid.Dock = DockStyle.Top;
+            TransferHistoryDataGrid.Location = new Point(0, 0);
+            TransferHistoryDataGrid.Name = "TransferHistoryDataGrid";
+            TransferHistoryDataGrid.Size = new Size(800, 224);
+            TransferHistoryDataGrid.TabIndex = 0;
             // 
             // TransferHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(TransferHistoryDataGrid);
             Name = "TransferHistory";
             Text = "TransferHistory";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TransferHistoryDataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TransferHistorySource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private BindingSource bindingSource1;
+        private DataGridView TransferHistoryDataGrid;
+        private BindingSource TransferHistorySource;
     }
 }
