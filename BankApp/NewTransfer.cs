@@ -63,6 +63,7 @@ namespace BankApp
             else
             {
                 MessageBox.Show("Błąd podczas wykonywania przelewu");
+                //TODO: wyciągnij błąd z jsona i wyświetl
             }
         }
     }
