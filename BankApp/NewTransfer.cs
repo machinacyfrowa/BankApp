@@ -15,6 +15,7 @@ namespace BankApp
     {
         public string token;
         public string source;
+        public Form1 parent;
         public NewTransfer()
         {
             InitializeComponent();
@@ -31,6 +32,12 @@ namespace BankApp
             string target = targetTextBox.Text;
             //pobieramy kwotę przlewu z formatki jako float (w złotych)
             float userAmount = float.Parse(amountTextBox.Text);
+            //sprawdzamy czy kwota jest większa od 0
+            if (userAmount <= 0)
+            {
+                MessageBox.Show("Kwota przelewu musi być większa od 0");
+                return;
+            }
             //konwertujemy kwotę w złotówkach na grosze
             int amount = (int)Math.Round(userAmount * 100);
             //tworzymy obiekt zawierający dane przelewu
@@ -47,6 +54,9 @@ namespace BankApp
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 MessageBox.Show("Przelew wykonany pomyślnie");
+
+                //odśwież dane rachunku - m.in. stan konta
+                parent.GetAccountData();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

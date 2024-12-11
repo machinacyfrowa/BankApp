@@ -41,7 +41,7 @@
             TransferHistoryDataGrid.Dock = DockStyle.Top;
             TransferHistoryDataGrid.Location = new Point(0, 0);
             TransferHistoryDataGrid.Name = "TransferHistoryDataGrid";
-            TransferHistoryDataGrid.Size = new Size(800, 224);
+            TransferHistoryDataGrid.Size = new Size(800, 314);
             TransferHistoryDataGrid.TabIndex = 0;
             // 
             // TransferHistory

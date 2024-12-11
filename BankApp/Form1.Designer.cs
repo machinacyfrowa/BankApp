@@ -148,7 +148,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += OnAppLoad;
-            Shown += GetAccountData;
+            Shown += RefreshData;
             AccountDetailsGroupBox.ResumeLayout(false);
             AccountDetailsGroupBox.PerformLayout();
             ResumeLayout(false);

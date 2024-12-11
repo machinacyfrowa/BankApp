@@ -14,12 +14,7 @@ namespace BankApp
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Method to get account data from API and fill the form with it
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GetAccountData(object sender, EventArgs e)
+        public void GetAccountData()
         {
             //to jest blibioteka do wysy³ania zapytañ http
             //i przetwarzania odpowiedzi otrzymanych z API
@@ -38,8 +33,18 @@ namespace BankApp
             //wypisz dane na formularzu
             AccountNameTextBox.Text = account.name;
             AccountNumberTextBox.Text = account.accountNo.ToString();
-            AccountAmountTextBox.Text = account.amount.ToString();
+            //konweruj i dodaj walutê
+            AccountAmountTextBox.Text = account.amount / 100f + " PLN";
+        }
 
+        /// <summary>
+        /// Method to get account data from API and fill the form with it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshData(object sender, EventArgs e)
+        {
+            GetAccountData();
         }
         /// <summary>
         /// This method is invoked when the application is loaded
@@ -73,6 +78,7 @@ namespace BankApp
             NewTransfer newTransfer = new NewTransfer();
 
             newTransfer.token = token;
+            newTransfer.parent = this;
             newTransfer.source = AccountNumberTextBox.Text;
 
             newTransfer.ShowDialog();
